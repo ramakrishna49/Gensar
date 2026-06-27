@@ -11,7 +11,7 @@ interface Setting {
 
 const defaultSettings = [
   { section: "general", key: "site_title", label: "Site Title", type: "text", defaultValue: "Gensar" },
-  { section: "general", key: "site_tagline", label: "Tagline", type: "text", defaultValue: "Shine with Gensar" },
+  { section: "general", key: "site_tagline", label: "Tagline", type: "text", defaultValue: "Inventing Better Future" },
   { section: "contact", key: "email", label: "Contact Email", type: "text", defaultValue: "" },
   { section: "contact", key: "phone", label: "Phone", type: "text", defaultValue: "" },
   { section: "contact", key: "address", label: "Address", type: "text", defaultValue: "" },

@@ -43,7 +43,7 @@ export default function LoginPage() {
           <img
             src="/img/Gensar Main Logo 2400x1800.jpg.jpeg"
             alt="Gensar"
-            className="h-14 sm:h-16 w-auto mx-auto mb-4"
+            className="h-24 sm:h-28 w-auto mx-auto mb-4"
           />
           <h1 className="text-2xl font-bold text-slate-900 flex items-center justify-center gap-2">
             <i className="fa-solid fa-shield-halved text-blue-600"></i>
