@@ -4,15 +4,20 @@ import { NextResponse } from "next/server";
 export default auth((req) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
-  const isOnAdmin = nextUrl.pathname.startsWith("/admin");
-  const isOnLogin = nextUrl.pathname === "/admin/login";
+  const pathname = nextUrl.pathname;
+  const isOnAdmin = pathname.startsWith("/admin");
+  const isOnLogin = pathname === "/admin/login";
 
   if (isOnAdmin && !isLoggedIn && !isOnLogin) {
-    return NextResponse.redirect(new URL("/admin/login", nextUrl));
+    const loginUrl = nextUrl.clone();
+    loginUrl.pathname = "/admin/login";
+    return NextResponse.redirect(loginUrl);
   }
 
   if (isLoggedIn && isOnLogin) {
-    return NextResponse.redirect(new URL("/admin/dashboard", nextUrl));
+    const dashUrl = nextUrl.clone();
+    dashUrl.pathname = "/admin/dashboard";
+    return NextResponse.redirect(dashUrl);
   }
 
   return NextResponse.next();
