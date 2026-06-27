@@ -3,6 +3,8 @@ import { clientLogos } from "@/lib/db/schema";
 import { NextResponse } from "next/server";
 import { desc, eq, and } from "drizzle-orm";
 
+export const runtime = "edge";
+
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const section = searchParams.get("section");
@@ -21,16 +23,15 @@ export async function GET(req: Request) {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
+      "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
     },
   });
 }
 
 export async function OPTIONS() {
-  return NextResponse.json(null, {
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-    },
-  });
+  return new NextResponse(null, { status: 204, headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  } });
 }
