@@ -3,8 +3,6 @@ import { testimonials } from "@/lib/db/schema";
 import { NextResponse } from "next/server";
 import { desc, eq, and } from "drizzle-orm";
 
-export const runtime = "edge";
-
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const pageSection = searchParams.get("section");

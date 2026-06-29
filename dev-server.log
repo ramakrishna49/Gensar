@@ -1,0 +1,12 @@
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.199:3000
+- Environments: .env.local, .env
+✓ Ready in 1252ms
+
+ GET /api/public/jobs 200 in 581ms (next.js: 448ms, application-code: 133ms)
+ GET /api/public/logos 200 in 328ms (next.js: 308ms, application-code: 20ms)
+ GET /api/public/testimonials 200 in 293ms (next.js: 277ms, application-code: 16ms)
+ GET /api/public/logos 200 in 561ms (next.js: 27ms, application-code: 534ms)
+ GET /api/public/testimonials?section=home 200 in 67ms (next.js: 14ms, application-code: 52ms)
+○ Compiling /_not-found/page ...
