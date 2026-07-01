@@ -1884,7 +1884,7 @@
     </script>
 
     <script>
-        var API = window.location.origin + '/api/public';
+        var API = (window.location.origin.includes('gensar') ? 'https://gensar-admin-ramakrishna49s-projects.vercel.app' : window.location.origin) + '/api/public';
 
         document.addEventListener('DOMContentLoaded', async function () {
             try {

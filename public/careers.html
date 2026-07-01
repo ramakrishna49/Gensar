@@ -808,7 +808,7 @@
             if (!container) return;
 
             try {
-                var API_BASE = window.location.origin + '/api/public';
+                var API_BASE = 'https://gensar-admin-ramakrishna49s-projects.vercel.app/api/public';
                 var res = await fetch(API_BASE + '/jobs', { cache: 'no-cache' });
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 var jobs = await res.json();
