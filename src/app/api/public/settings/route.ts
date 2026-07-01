@@ -3,8 +3,6 @@ import { siteSettings } from "@/lib/db/schema";
 import { NextResponse } from "next/server";
 import { eq, and } from "drizzle-orm";
 
-export const runtime = "edge";
-
 export async function GET() {
   const socialKeys = ["linkedin", "instagram"];
   const results = [];
